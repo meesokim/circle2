@@ -18,19 +18,26 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 #include "kernel.h"
+#include <stdio.h>
 #include <circle/string.h>
 #include <circle/debug.h>
 #include <assert.h>
-
+#define NDEBUG
 static const char FromKernel[] = "kernel";
 
+extern "C" int _main(void);
+extern "C" int __main(void);
+
 CKernel::CKernel (void)
-:	m_Memory (TRUE),
-	m_Screen (m_Options.GetWidth (), m_Options.GetHeight ()),
-	m_Logger (m_Options.GetLogLevel ())
+:	m_Screen (m_Options.GetWidth (), m_Options.GetHeight ()),
+	m_Timer (&m_Interrupt),
+	m_Logger (m_Options.GetLogLevel (), &m_Timer),
+	m_USBHCI (&m_Interrupt, &m_Timer),
+	m_VCHIQ (&m_Memory, &m_Interrupt)
 {
 	m_ActLED.Blink (5);	// show we are alive
 }
+
 
 CKernel::~CKernel (void)
 {
@@ -44,12 +51,12 @@ boolean CKernel::Initialize (void)
 	{
 		bOK = m_Screen.Initialize ();
 	}
-	
+
 	if (bOK)
 	{
 		bOK = m_Serial.Initialize (115200);
 	}
-	
+
 	if (bOK)
 	{
 		CDevice *pTarget = m_DeviceNameService.GetDevice (m_Options.GetLogDevice (), FALSE);
@@ -60,14 +67,35 @@ boolean CKernel::Initialize (void)
 
 		bOK = m_Logger.Initialize (pTarget);
 	}
-	
+
+	if (bOK)
+	{
+		bOK = m_Interrupt.Initialize ();
+	}
+
+	if (bOK)
+	{
+		bOK = m_Timer.Initialize ();
+	}
+
+	if (bOK)
+	{
+		bOK = m_USBHCI.Initialize ();
+	}
+
+	if (bOK)
+	{
+		bOK = m_VCHIQ.Initialize ();
+	}
+
 	return bOK;
 }
+extern "C" int __main(void);
 
 TShutdownMode CKernel::Run (void)
 {
 	m_Logger.Write (FromKernel, LogNotice, "Compile time: " __DATE__ " " __TIME__);
-
+    printf("test\n");
 	// show the character set on screen
 	for (char chChar = ' '; chChar <= '~'; chChar++)
 	{
@@ -82,7 +110,9 @@ TShutdownMode CKernel::Run (void)
 		m_Screen.Write ((const char *) Message, Message.GetLength ());
 	}
 	m_Screen.Write ("\n", 1);
-
+    _main();
+	m_Screen.Write ("3", 1);
+//    __main();
 #ifndef NDEBUG
 	// some debugging features
 	m_Logger.Write (FromKernel, LogDebug, "Dumping the start of the ATAGS");

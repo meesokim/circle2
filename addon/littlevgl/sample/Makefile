@@ -6,12 +6,12 @@ CIRCLEHOME = ../../..
 
 OBJS	= main.o kernel.o
 
-LIBS	= ../liblvgl.a \
-	  ../liblv_examples.a \
-	  $(CIRCLEHOME)/lib/usb/libusb.a \
-	  $(CIRCLEHOME)/lib/input/libinput.a \
-	  $(CIRCLEHOME)/lib/fs/libfs.a \
-	  $(CIRCLEHOME)/lib/libcircle.a
+LIBS	= ../liblvgl$(RASPPI).a \
+	  ../liblv_examples$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/usb/libusb$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/input/libinput$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/fs/libfs$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/libcircle$(RASPPI).a
 
 include $(CIRCLEHOME)/Rules.mk
 

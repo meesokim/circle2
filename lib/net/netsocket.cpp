@@ -43,7 +43,7 @@ int CNetSocket::Connect (const char *pHost, const char *pPort)
 	assert (pPort != 0);
 
 	char *pEnd = 0;
-	unsigned long ulPort = strtoul (pPort, &pEnd, 10);
+	unsigned long ulPort = _strtoul (pPort, &pEnd, 10);
 	if (   (pEnd != 0 && *pEnd != '\0')
 	    || (ulPort == 0 || ulPort > 0xFFFF))
 	{

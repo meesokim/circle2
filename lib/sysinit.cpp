@@ -158,6 +158,7 @@ static void vfpinit (void)
 }
 
 #endif
+	extern "C" { int main (void); }
 
 void sysinit (void)
 {
@@ -201,7 +202,6 @@ void sysinit (void)
 		(**pFunc) ();
 	}
 
-	extern int main (void);
 	if (main () == EXIT_REBOOT)
 	{
 		if (IsChainBootEnabled ())

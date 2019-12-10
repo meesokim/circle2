@@ -36,7 +36,7 @@ VideoCore OS Abstraction Layer - Queue public header file
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 #include "vcos.h"
 
 /** \file vcos_queue.h

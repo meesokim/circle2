@@ -36,7 +36,7 @@ VideoCore OS Abstraction Layer - fixed size allocator support
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 #include "vcos.h"
 
 /** \file

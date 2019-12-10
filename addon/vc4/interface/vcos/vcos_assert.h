@@ -124,7 +124,7 @@ VideoCore OS Abstraction Layer - Assertion and error-handling macros.
  *
  * #define VCOS_VERIFY_BKPTS my_breakpoint_enable_flag
  *
- * #include "interface/vcos/vcos.h"
+ * #include "vcos.h"
  *
  * vcos_static_assert((sizeof(object) % 32) == 0);
  *
@@ -146,10 +146,10 @@ VideoCore OS Abstraction Layer - Assertion and error-handling macros.
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 
 #ifdef __COVERITY__
-#include "interface/vcos/user_nodefs.h"
+#include "user_nodefs.h"
 
 extern void __coverity_panic__(void);
 #undef VCOS_ASSERT_BKPT

@@ -6,7 +6,7 @@ CIRCLEHOME = ../../../..
 
 OBJS	= bcm_host.o
 
-libbcm_host.a: $(OBJS)
+libbcm_host$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

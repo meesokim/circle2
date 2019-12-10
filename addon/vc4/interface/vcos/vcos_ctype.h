@@ -40,7 +40,7 @@ VideoCore OS Abstraction Layer - public header file
   */
 
 #ifdef __circle__
-#include "interface/vcos/vcos.h"
+#include "vcos.h"
 #else
 #ifdef __KERNEL__
 #include <linux/ctype.h>

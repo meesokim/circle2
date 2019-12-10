@@ -29,7 +29,7 @@ OBJS	= netsubsystem.o nettask.o netsocket.o socket.o \
 	  dnsclient.o ntpclient.o mqttclient.o mqttsendpacket.o mqttreceivepacket.o \
 	  dhcpclient.o ntpdaemon.o httpdaemon.o httpclient.o tftpdaemon.o syslogdaemon.o
 
-libnet.a: $(OBJS)
+libnet$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

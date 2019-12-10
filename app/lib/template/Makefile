@@ -6,7 +6,7 @@ CIRCLEHOME = ../../..
 
 OBJS	= myclass.o
 
-libtempl.a: $(OBJS)
+libtempl$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

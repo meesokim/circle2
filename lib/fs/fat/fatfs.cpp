@@ -75,7 +75,7 @@ unsigned CFATFileSystem::RootFindNext (TDirentry *pEntry, TFindCurrentEntry *pCu
 	return m_Root.FindNext (pEntry, pCurrentEntry) ? 1 : 0;
 }
 
-unsigned CFATFileSystem::FileOpen (const char *pTitle)
+unsigned CFATFileSystem::FileOpen (char const *pTitle)
 {
 	m_FileTableLock.Acquire ();
 

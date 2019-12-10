@@ -6,7 +6,7 @@ CIRCLEHOME = ../..
 
 OBJS	= properties.o propertiesfile.o propertiesfatfsfile.o propertiesbasefile.o
 
-libproperties.a: $(OBJS)
+libproperties$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

@@ -6,11 +6,11 @@ CIRCLEHOME = ../../../..
 
 OBJS	= main.o kernel.o
 
-LIBS	= $(CIRCLEHOME)/addon/vc4/sound/libvchiqsound.a \
-	  $(CIRCLEHOME)/addon/vc4/vchiq/libvchiq.a \
-	  $(CIRCLEHOME)/addon/linux/liblinuxemu.a \
-	  $(CIRCLEHOME)/lib/sched/libsched.a \
-	  $(CIRCLEHOME)/lib/libcircle.a
+LIBS	= $(CIRCLEHOME)/addon/vc4/sound/libvchiqsound$(RASPPI).a \
+	  $(CIRCLEHOME)/addon/vc4/vchiq/libvchiq$(RASPPI).a \
+	  $(CIRCLEHOME)/addon/linux/liblinuxemu$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/sched/libsched$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/libcircle$(RASPPI).a
 
 EXTRACLEAN = sound.h
 

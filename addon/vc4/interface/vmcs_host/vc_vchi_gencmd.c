@@ -487,9 +487,9 @@ int vc_gencmd_number_property(char *text, const char *property, int *number) {
    temp = value[length];
    value[length] = 0;
    if (strncmp(value, "0x", 2) == 0)
-      ulong = strtoul (value + 2, &end, 16);
+      ulong = _strtoul (value + 2, &end, 16);
    else
-      ulong = strtoul (value, &end, 10);
+      ulong = _strtoul (value, &end, 10);
    retval = end == NULL || *end == '\0' ? 1 : 0;
    if (retval == 1) {
       if (ulong == (int) ulong)

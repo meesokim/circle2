@@ -19,13 +19,14 @@
 #
 
 CIRCLEHOME ?= ..
+CIRCLE_STDLIB ?= ../../../circle-stdlib/install/arm-none-circle/include
 
 -include $(CIRCLEHOME)/Config.mk
 -include $(CIRCLEHOME)/Config2.mk	# is not overwritten by "configure"
 
 AARCH	 ?= 32
 RASPPI	 ?= 1
-PREFIX	 ?= arm-eabi-
+PREFIX	 ?= arm-none-eabi-
 PREFIX64 ?= aarch64-elf-
 
 # see: doc/stdlib-support.txt
@@ -92,7 +93,7 @@ CRTBEGIN != $(CPP) $(ARCH) -print-file-name=crtbegin.o
 CRTEND   != $(CPP) $(ARCH) -print-file-name=crtend.o
 endif
 else
-CPPFLAGS  += -fno-exceptions -fno-rtti -nostdinc++
+CPPFLAGS  += -fno-exceptions -fno-rtti -nostdinc++ -fno-threadsafe-statics
 endif
 
 ifeq ($(strip $(STDLIB_SUPPORT)),0)
@@ -111,7 +112,7 @@ endif
 
 OPTIMIZE ?= -O2
 
-INCLUDE	+= -I $(CIRCLEHOME)/include -I $(CIRCLEHOME)/addon -I $(CIRCLEHOME)/app/lib \
+INCLUDE	+= -I $(CIRCLEHOME)/include -I $(CIRCLEHOME)/addon -I $(CIRCLEHOME)/app/lib -I $(CIRCLE_STDLIB) \
 	   -I $(CIRCLEHOME)/addon/vc4 -I $(CIRCLEHOME)/addon/vc4/interface/khronos/include
 DEFINE	+= -D__circle__ -DRASPPI=$(RASPPI) -DSTDLIB_SUPPORT=$(STDLIB_SUPPORT) \
 	   -D__VCCOREVER__=0x04000000 -U__unix__ -U__linux__ #-DNDEBUG
@@ -134,7 +135,7 @@ CPPFLAGS+= $(CFLAGS) -std=c++14
 
 $(TARGET).img: $(OBJS) $(LIBS) $(CIRCLEHOME)/circle.ld
 	@echo "  LD    $(TARGET).elf"
-	@$(LD) -o $(TARGET).elf -Map $(TARGET).map --section-start=.init=$(LOADADDR) \
+	@$(LD) -L . -o $(TARGET).elf -Map $(TARGET).map --section-start=.init=$(LOADADDR) \
 		-T $(CIRCLEHOME)/circle.ld $(CRTBEGIN) $(OBJS) \
 		--start-group $(LIBS) $(EXTRALIBS) --end-group $(CRTEND)
 	@echo "  DUMP  $(TARGET).lst"
@@ -145,7 +146,11 @@ $(TARGET).img: $(OBJS) $(LIBS) $(CIRCLEHOME)/circle.ld
 	@wc -c < $(TARGET).img
 
 clean:
-	rm -f *.o *.a *.elf *.lst *.img *.hex *.cir *.map *~ $(EXTRACLEAN)
+	rm -f *.o *.elf *.lst *.hex *.cir *.map *~ $(EXTRACLEAN)
+
+cleanlib:
+	rm -f *.o *$(RASPPI).a *.elf *.lst *.img *.hex *.cir *.map *~ $(EXTRACLEAN)
+
 
 ifneq ($(strip $(SDCARD)),)
 install: $(TARGET).img

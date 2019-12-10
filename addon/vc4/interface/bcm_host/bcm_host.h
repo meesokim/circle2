@@ -49,13 +49,13 @@ unsigned bcm_host_get_peripheral_size(void);
 unsigned bcm_host_get_sdram_address(void);
 #endif
 
-#include "interface/vmcs_host/vc_dispmanx.h"
+#include "../vmcs_host/vc_dispmanx.h"
 #ifndef __circle__
-#include "interface/vmcs_host/vc_tvservice.h"
-#include "interface/vmcs_host/vc_cec.h"
-#include "interface/vmcs_host/vc_cecservice.h"
+#include "../vmcs_host/vc_tvservice.h"
+#include "../vmcs_host/vc_cec.h"
+#include "../vmcs_host/vc_cecservice.h"
 #endif
-#include "interface/vmcs_host/vcgencmd.h"
+#include "../vmcs_host/vcgencmd.h"
 
 #ifdef __cplusplus
 }

@@ -23,7 +23,7 @@ CIRCLEHOME = ../..
 OBJS	= keyboardbehaviour.o keymap.o mousebehaviour.o mouse.o touchscreen.o \
 	  console.o keyboardbuffer.o linediscipline.o
 
-libinput.a: $(OBJS)
+libinput$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

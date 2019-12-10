@@ -26,7 +26,7 @@ VG_OBJS	= vg/vg_client.o vg/vg_int_mat3x3.o
 
 OBJS = $(KHRN_OBJS) $(EGL_OBJS) $(EXT_OBJS) $(GLXX_OBJS) $(VG_OBJS)
 
-libkhrn_client.a: $(OBJS)
+libkhrn_client$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

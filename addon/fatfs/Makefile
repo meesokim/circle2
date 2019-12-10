@@ -6,7 +6,7 @@ CIRCLEHOME = ../..
 
 OBJS	= ff.o diskio.o syscall.o ffunicode.o
 
-libfatfs.a: $(OBJS)
+libfatfs$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

@@ -22,7 +22,7 @@ CIRCLEHOME = ../..
 
 OBJS	= partition.o partitionmanager.o
 
-libfs.a: $(OBJS)
+libfs$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

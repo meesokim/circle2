@@ -6,7 +6,7 @@ CIRCLEHOME = ../..
 
 OBJS	= hcsr04.o mpu6050.o bmp180.o
 
-libsensor.a: $(OBJS)
+libsensor$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

@@ -176,7 +176,7 @@ THTTPStatus CHTTPClient::Request (THTTPRequestMethod  Method,
 							{
 								char *pEnd;
 								unsigned long ulStatus;
-								ulStatus = strtoul (pToken, &pEnd, 10);
+								ulStatus = _strtoul (pToken, &pEnd, 10);
 								if (   pEnd != 0
 								    && *pEnd != '\0')
 								{
@@ -242,7 +242,7 @@ THTTPStatus CHTTPClient::Request (THTTPRequestMethod  Method,
 				if (chChar == '\n')	// end of header?
 				{
 					char *pEnd;
-					ulBytes = strtoul (Line, &pEnd, 16);	// convert chunk length
+					ulBytes = _strtoul (Line, &pEnd, 16);	// convert chunk length
 					if (   pEnd != 0
 					    && *pEnd != '\0')
 					{

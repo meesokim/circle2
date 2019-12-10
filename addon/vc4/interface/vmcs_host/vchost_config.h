@@ -28,7 +28,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef VCHOST_CONFIG_H
 #define VCHOST_CONFIG_H
 
-#include "interface/vcos/vcos.h"
+#include "../vcos/vcos.h"
 
 #if 0
 /* Types that map onto VideoCore's types of the same name. */

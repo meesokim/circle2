@@ -6,7 +6,7 @@ CIRCLEHOME = ../../..
 
 OBJS	= vchiqsoundbasedevice.o vchiqsounddevice.o
 
-libvchiqsound.a: $(OBJS)
+libvchiqsound$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

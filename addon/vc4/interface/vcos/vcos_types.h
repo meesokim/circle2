@@ -36,11 +36,11 @@ VideoCore OS Abstraction Layer - basic types
 
 #include <stddef.h>
 #if defined(__unix__) && !defined(__ANDROID__)
-#include "interface/vcos/pthreads/vcos_platform_types.h"
+#include "pthreads/vcos_platform_types.h"
 #else
 #include "vcos_platform_types.h"
 #endif
-#include "interface/vcos/vcos_attr.h"
+#include "vcos_attr.h"
 
 #if !defined(VCOSPRE_) || !defined(VCOSPOST_)
 #error VCOSPRE_ or VCOSPOST_ not defined!

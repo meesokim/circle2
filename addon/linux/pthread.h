@@ -15,7 +15,7 @@ extern "C" {
 #endif
 
 /* Types */
-
+#if !defined(FIPS_RASPBERRYPI)
 typedef unsigned int pthread_key_t;
 
 typedef struct pthread
@@ -38,7 +38,9 @@ typedef struct mutex pthread_mutex_t;
 
 typedef int pthread_once_t;
 #define PTHREAD_ONCE_INIT		(0)
-
+#else
+#include <sys/types.h>
+#endif
 /* Functions */
 
 int pthread_attr_init (pthread_attr_t *attr);

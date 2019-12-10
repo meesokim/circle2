@@ -20,7 +20,7 @@
 
 CIRCLEHOME = ../..
 
-all: libusb.a
+all: libusb$(RASPPI).a
 
 include $(CIRCLEHOME)/Rules.mk
 
@@ -39,7 +39,7 @@ OBJS	+= xhcicommandmanager.o xhcidevice.o xhciendpoint.o xhcieventmanager.o xhci
 	   xhciring.o xhciroothub.o xhcirootport.o xhcislotmanager.o xhciusbdevice.o
 endif
 
-libusb.a: $(OBJS)
+libusb$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

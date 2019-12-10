@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="armc-016-tutorial"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="armc-016">
+				<Option output="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/armc-016" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DRPI2=1"/>
+					<Add directory="c:\msys64\opt\bin\../lib/gcc/arm-none-eabi/8.2.1/include"/>
+					<Add directory="c:\msys64\opt\bin\../lib/gcc/arm-none-eabi/8.2.1/include-fixed"/>
+					<Add directory="c:\msys64\opt\bin\../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 armc-016"/>
+					<CompileFile command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="armc-016/fast">
+				<Option output="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/armc-016" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DRPI2=1"/>
+					<Add directory="c:\msys64\opt\bin\../lib/gcc/arm-none-eabi/8.2.1/include"/>
+					<Add directory="c:\msys64\opt\bin\../lib/gcc/arm-none-eabi/8.2.1/include-fixed"/>
+					<Add directory="c:\msys64\opt\bin\../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 armc-016/fast"/>
+					<CompileFile command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/usr/bin/make.exe -f &quot;C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/armc-016.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/armc-cstartup.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/armc-cstubs.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/armc-start.S">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-armtimer.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-armtimer.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-aux.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-aux.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-base.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-gpio.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-gpio.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-interrupts.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-interrupts.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-mailbox-interface.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-mailbox-interface.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-mailbox.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-mailbox.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-systimer.c">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/rpi-systimer.h">
+			<Option target="armc-016"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/msys64/home/meesokim/arm-tutorial-rpi/part-5/armc-016/toolchain-arm-none-eabi-rpi2.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

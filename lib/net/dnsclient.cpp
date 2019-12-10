@@ -284,7 +284,7 @@ boolean CDNSClient::ConvertIPString (const char *pIPString, CIPAddress *pIPAddre
 	{
 		char *pEnd = 0;
 		assert (pIPString != 0);
-		unsigned long nNumber = strtoul (pIPString, &pEnd, 10);
+		unsigned long nNumber = _strtoul (pIPString, &pEnd, 10);
 
 		if (i < 3)
 		{

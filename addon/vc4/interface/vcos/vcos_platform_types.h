@@ -32,7 +32,7 @@ VideoCore OS Abstraction Layer - platform-specific types and defines
 #ifndef VCOS_PLATFORM_TYPES_H
 #define VCOS_PLATFORM_TYPES_H
 
-#include "interface/vcos/vcos_inttypes.h"
+#include "vcos_inttypes.h"
 
 #ifdef __cplusplus
 extern "C" {

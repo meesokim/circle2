@@ -43,7 +43,7 @@ VideoCore OS Abstraction Layer - event flags implemented via a semaphore
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 
 /** Bits 0 to (VCOS_BLOCKPOOL_SUBPOOL_BITS - 1) are used to store the
  * subpool id. */

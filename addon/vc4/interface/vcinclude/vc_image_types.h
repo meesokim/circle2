@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* This file gets included by the VCE compiler, which gets confused
  * easily by the VCOS headers. So cannot include vcos.h here.
  */
-#include "interface/vcos/vcos_stdint.h"
+#include "../../interface/vcos/vcos_stdint.h"
 
 /* We have so many rectangle types; let's try to introduce a common one. */
 typedef struct tag_VC_RECT_T {

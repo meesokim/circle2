@@ -36,7 +36,7 @@ VideoCore OS Abstraction Layer - timer support
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 #ifndef VCOS_PLATFORM_H
 #include "vcos.h"
 #endif

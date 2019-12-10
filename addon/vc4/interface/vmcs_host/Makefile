@@ -6,7 +6,7 @@ CIRCLEHOME = ../../../..
 
 OBJS	= vc_vchi_gencmd.o vc_vchi_dispmanx.o
 
-libvmcs_host.a: $(OBJS)
+libvmcs_host$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

@@ -31,11 +31,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define _DISPMANX_TYPES_H
 
 #ifdef __circle__
-#include "interface/vcinclude/vc_image_types.h"
-#include "interface/vcinclude/vc_display_types.h"
+#include "../vcinclude/vc_image_types.h"
+#include "../vcinclude/vc_display_types.h"
 #else
-#include "interface/vctypes/vc_image_types.h"
-#include "interface/vctypes/vc_display_types.h"
+#include "../vctypes/vc_image_types.h"
+#include "../vctypes/vc_display_types.h"
 #endif
 
 #define VC_DISPMANX_VERSION   1

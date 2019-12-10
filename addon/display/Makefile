@@ -6,7 +6,7 @@ CIRCLEHOME = ../..
 
 OBJS	= hd44780device.o
 
-libdisplay.a: $(OBJS)
+libdisplay$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

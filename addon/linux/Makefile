@@ -9,7 +9,7 @@ OBJS	= linuxdevice.o linuxemu.o \
 	  mutex.o platform_device.o printk.o pthread.o raspberrypi-firmware.o rwlock.o \
 	  semaphore.o spinlock.o sprintf.o timer.o
 
-liblinuxemu.a: $(OBJS)
+liblinuxemu$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

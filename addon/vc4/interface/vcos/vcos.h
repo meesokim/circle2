@@ -111,115 +111,115 @@ VideoCore OS Abstraction Layer - public header file
 #ifndef VCOS_H
 #define VCOS_H
 
-#include "interface/vcos/vcos_assert.h"
+#include "vcos_assert.h"
 #include "vcos_types.h"
 
 #if defined(__unix__) && !defined(__ANDROID__)
-#include "interface/vcos/pthreads/vcos_platform.h"
+#include "pthreads/vcos_platform.h"
 #else
 #include "vcos_platform.h"
 #endif
 
 #ifndef VCOS_INIT_H
-#include "interface/vcos/vcos_init.h"
+#include "vcos_init.h"
 #endif
 
 #ifndef VCOS_SEMAPHORE_H
-#include "interface/vcos/vcos_semaphore.h"
+#include "vcos_semaphore.h"
 #endif
 
 #ifndef VCOS_THREAD_H
-#include "interface/vcos/vcos_thread.h"
+#include "vcos_thread.h"
 #endif
 
 #ifndef VCOS_MUTEX_H
-#include "interface/vcos/vcos_mutex.h"
+#include "vcos_mutex.h"
 #endif
 
 #ifndef VCOS_MEM_H
-#include "interface/vcos/vcos_mem.h"
+#include "vcos_mem.h"
 #endif
 
 #ifndef VCOS_LOGGING_H
-#include "interface/vcos/vcos_logging.h"
+#include "vcos_logging.h"
 #endif
 
 #ifndef VCOS_STRING_H
-#include "interface/vcos/vcos_string.h"
+#include "vcos_string.h"
 #endif
 
 #ifndef VCOS_EVENT_H
-#include "interface/vcos/vcos_event.h"
+#include "vcos_event.h"
 #endif
 
 #ifndef VCOS_THREAD_ATTR_H
-#include "interface/vcos/vcos_thread_attr.h"
+#include "vcos_thread_attr.h"
 #endif
 
 #ifndef VCOS_TLS_H
-#include "interface/vcos/vcos_tls.h"
+#include "vcos_tls.h"
 #endif
 
 #ifndef VCOS_REENTRANT_MUTEX_H
-#include "interface/vcos/vcos_reentrant_mutex.h"
+#include "vcos_reentrant_mutex.h"
 #endif
 
 #ifndef VCOS_NAMED_SEMAPHORE_H
-#include "interface/vcos/vcos_named_semaphore.h"
+#include "vcos_named_semaphore.h"
 #endif
 
 #ifndef VCOS_QUICKSLOW_MUTEX_H
-#include "interface/vcos/vcos_quickslow_mutex.h"
+#include "vcos_quickslow_mutex.h"
 #endif
 
 /* Headers with predicates */
 
 #if VCOS_HAVE_EVENT_FLAGS
-#include "interface/vcos/vcos_event_flags.h"
+#include "vcos_event_flags.h"
 #endif
 
 #if VCOS_HAVE_QUEUE
-#include "interface/vcos/vcos_queue.h"
+#include "vcos_queue.h"
 #endif
 
 #if VCOS_HAVE_LEGACY_ISR
-#include "interface/vcos/vcos_legacy_isr.h"
+#include "vcos_legacy_isr.h"
 #endif
 
 #if VCOS_HAVE_TIMER
-#include "interface/vcos/vcos_timer.h"
+#include "vcos_timer.h"
 #endif
 
 #if VCOS_HAVE_MEMPOOL
-#include "interface/vcos/vcos_mempool.h"
+#include "vcos_mempool.h"
 #endif
 
 #if VCOS_HAVE_ISR
-#include "interface/vcos/vcos_isr.h"
+#include "vcos_isr.h"
 #endif
 
 #if VCOS_HAVE_ATOMIC_FLAGS
-#include "interface/vcos/vcos_atomic_flags.h"
+#include "vcos_atomic_flags.h"
 #endif
 
 #if VCOS_HAVE_ONCE
-#include "interface/vcos/vcos_once.h"
+#include "vcos_once.h"
 #endif
 
 #if VCOS_HAVE_BLOCK_POOL
-#include "interface/vcos/vcos_blockpool.h"
+#include "vcos_blockpool.h"
 #endif
 
 #if VCOS_HAVE_FILE
-#include "interface/vcos/vcos_file.h"
+#include "vcos_file.h"
 #endif
 
 #if VCOS_HAVE_CFG
-#include "interface/vcos/vcos_cfg.h"
+#include "vcos_cfg.h"
 #endif
 
 #if VCOS_HAVE_CMD
-#include "interface/vcos/vcos_cmd.h"
+#include "vcos_cmd.h"
 #endif
 
 #endif /* VCOS_H */

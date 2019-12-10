@@ -6,13 +6,13 @@ CIRCLEHOME = ../..
 
 OBJS	= main.o kernel.o httpbootserver.o tftpbootserver.o
 
-LIBS	= $(CIRCLEHOME)/lib/usb/libusb.a \
-	  $(CIRCLEHOME)/lib/input/libinput.a \
-	  $(CIRCLEHOME)/lib/fs/fat/libfatfs.a \
-	  $(CIRCLEHOME)/lib/fs/libfs.a \
-	  $(CIRCLEHOME)/lib/net/libnet.a \
-	  $(CIRCLEHOME)/lib/sched/libsched.a \
-	  $(CIRCLEHOME)/lib/libcircle.a
+LIBS	= $(CIRCLEHOME)/lib/usb/libusb$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/input/libinput$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/fs/fat/libfatfs$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/fs/libfs$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/net/libnet$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/sched/libsched$(RASPPI).a \
+	  $(CIRCLEHOME)/lib/libcircle$(RASPPI).a
 
 CONTENT	= index.h style.h favicon.h
 

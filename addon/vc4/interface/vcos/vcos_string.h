@@ -43,7 +43,7 @@ VideoCore OS Abstraction Layer - public header file
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 #include "vcos.h"
 
 #ifdef __circle__

@@ -220,9 +220,9 @@ typedef struct
 
 #define VCOS_TICKS_PER_SECOND _vcos_get_ticks_per_second()
 
-#include "interface/vcos/vcos_generic_event_flags.h"
-#include "interface/vcos/vcos_generic_blockpool.h"
-#include "interface/vcos/vcos_mem_from_malloc.h"
+#include "vcos_generic_event_flags.h"
+#include "vcos_generic_blockpool.h"
+#include "vcos_mem_from_malloc.h"
 
 /** Convert errno values into the values recognized by vcos */
 VCOSPRE_ VCOS_STATUS_T vcos_pthreads_map_error(int error);
@@ -982,10 +982,10 @@ VCOS_INLINE_DECL void _vcos_thread_sem_post(VCOS_THREAD_T *);
 #define VCOS_APPLICATION_ARGC          vcos_get_argc()
 #define VCOS_APPLICATION_ARGV          vcos_get_argv()
 
-#include "interface/vcos/vcos_generic_reentrant_mtx.h"
-#include "interface/vcos/vcos_generic_named_sem.h"
-#include "interface/vcos/vcos_generic_quickslow_mutex.h"
-#include "interface/vcos/vcos_common.h"
+#include "vcos_generic_reentrant_mtx.h"
+#include "vcos_generic_named_sem.h"
+#include "vcos_generic_quickslow_mutex.h"
+#include "vcos_common.h"
 
 #ifdef __circle__
 #define _VCOS_LOG_LEVEL() NULL

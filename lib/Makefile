@@ -35,7 +35,7 @@ OBJS32	= cache-v7.o exceptionhandler.o exceptionstub.o memory.o pagetable.o \
 OBJS64	= exceptionhandler64.o exceptionstub64.o memory64.o startup64.o \
 	  synchronize64.o translationtable64.o
 
-all: libcircle.a
+all: libcircle$(RASPPI).a
 
 include ../Rules.mk
 
@@ -58,7 +58,7 @@ ifneq ($(strip $(STDLIB_SUPPORT)),3)
 OBJS	+= new.o purecall.o
 endif
 
-libcircle.a: $(OBJS)
+libcircle$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

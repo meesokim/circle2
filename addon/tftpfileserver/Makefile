@@ -6,7 +6,7 @@ CIRCLEHOME = ../..
 
 OBJS	= tftpfileserver.o
 
-libtftpfileserver.a: $(OBJS)
+libtftpfileserver$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

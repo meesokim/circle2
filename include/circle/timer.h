@@ -25,7 +25,10 @@
 #include <circle/ptrlist.h>
 #include <circle/sysconfig.h>
 #include <circle/spinlock.h>
+
+#if !defined(FIPS_RASPBERRYPI)
 #include <circle/types.h>
+#endif
 
 #define HZ		100			// ticks per second
 

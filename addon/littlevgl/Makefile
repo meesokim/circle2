@@ -14,14 +14,14 @@ CSRCS :=
 include $(LVGL_DIR)/lv_examples/lv_examples.mk
 EXOBJS := $(CSRCS:.c=.o)
 
-all: liblvgl.a liblv_examples.a
+all: liblvgl$(RASPPI).a liblv_examples.a
 
-liblvgl.a: $(OBJS)
+liblvgl$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)
 
-liblv_examples.a: $(EXOBJS)
+liblv_examples$(RASPPI).a: $(EXOBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(EXOBJS)

@@ -19,6 +19,7 @@
 //
 #include "kernel.h"
 #include <circle/startup.h>
+extern "C" int __main(void);
 
 int main (void)
 {
@@ -36,6 +37,7 @@ int main (void)
 	switch (ShutdownMode)
 	{
 	case ShutdownReboot:
+        __main();
 		reboot ();
 		return EXIT_REBOOT;
 

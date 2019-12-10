@@ -36,7 +36,7 @@ VideoCore OS Abstraction Layer - thread local storage
 extern "C" {
 #endif
 
-#include "interface/vcos/vcos_types.h"
+#include "vcos_types.h"
 #include "vcos.h"
 
 

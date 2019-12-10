@@ -6,7 +6,7 @@ CIRCLEHOME = ../..
 
 OBJS	= OneWire.o
 
-libonewire.a: $(OBJS)
+libonewire$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)

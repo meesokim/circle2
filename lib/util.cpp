@@ -380,7 +380,7 @@ char *strtok_r (char *pString, const char *pDelim, char **ppSavePtr)
 	return pToken;
 }
 
-unsigned long strtoul (const char *pString, char **ppEndPtr, int nBase)
+unsigned long _strtoul (const char *pString, char **ppEndPtr, int nBase)
 {
 	unsigned long ulResult = 0;
 	unsigned long ulPrevResult;

@@ -25,7 +25,7 @@ OBJS	= btsubsystem.o bttask.o \
 	  bthcilayer.o btdevicemanager.o \
 	  btqueue.o btuarttransport.o
 
-libbluetooth.a: $(OBJS)
+libbluetooth$(RASPPI).a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)
