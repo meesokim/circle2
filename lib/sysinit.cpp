@@ -181,13 +181,14 @@ void sysinit (void)
 #endif
 
 	// clear BSS
+#if 0	
 	extern unsigned char __bss_start;
 	extern unsigned char _end;
 	for (unsigned char *pBSS = &__bss_start; pBSS < &_end; pBSS++)
 	{
 		*pBSS = 0;
 	}
-
+#endif
 	CMachineInfo MachineInfo;
 
 #if STDLIB_SUPPORT >= 2

@@ -30,7 +30,7 @@ OBJS	= actled.o alloc.o assert.o bcmframebuffer.o bcmmailbox.o \
 	  util_fast.o virtualgpiopin.o chainboot.o macaddress.o netdevice.o
 
 OBJS32	= cache-v7.o exceptionhandler.o exceptionstub.o memory.o pagetable.o \
-	  startup.o synchronize.o
+	  SmartStart32.o synchronize.o
 
 OBJS64	= exceptionhandler64.o exceptionstub64.o memory64.o startup64.o \
 	  synchronize64.o translationtable64.o

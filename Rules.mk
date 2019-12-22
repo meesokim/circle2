@@ -127,15 +127,17 @@ CPPFLAGS+= $(CFLAGS) -std=c++14
 
 %.o: %.c
 	@echo "  CC    $@"
+	@$(CC) $(CFLAGS) -MM -MF $(patsubst %.o,%.d,$@) $<
 	@$(CC) $(CFLAGS) -std=gnu99 -c -o $@ $<
 
 %.o: %.cpp
 	@echo "  CPP   $@"
-	@echo 	@$(CPP) $(CPPFLAGS) -c -o $@ $<
+	@$(CPP) $(CPPFLAGS) -MM -MF $(patsubst %.o,%.d,$@) $<
 	@$(CPP) $(CPPFLAGS) -c -o $@ $<
 
 %.o: %.cc
 	@echo "  CPP   $@"
+	@$(CPP) $(CPPFLAGS) -MM -MF $(patsubst %.o,%.d,$@) $<
 	@$(CPP) $(CPPFLAGS) -c -o $@ $<
 
 $(TARGET).img: $(OBJS) $(LIBS) $(CIRCLEHOME)/circle.ld
@@ -149,9 +151,17 @@ $(TARGET).img: $(OBJS) $(LIBS) $(CIRCLEHOME)/circle.ld
 	@$(PREFIX)objcopy $(TARGET).elf -O binary $(TARGET).img
 	@echo -n "  WC    $(TARGET).img => "
 	@wc -c < $(TARGET).img
+	
+depend: .depend
+
+.depend: $(SOURCES)
+	@rm -f ./.depend
+	@$(CC) $(CFLAGS) -MM $^>>./.depend;
+
+include .depend		
 
 clean:
-	rm -f *.o *.elf *.lst *.hex *.cir *.map *~ $(EXTRACLEAN)
+	rm -f *.o *.bak *.elf *.lst *.hex *.cir *.map *.img *~ $(EXTRACLEAN)
 
 cleanlib:
 	rm -f *.o *$(RASPPI).a *.elf *.lst *.img *.hex *.cir *.map *~ $(EXTRACLEAN)
