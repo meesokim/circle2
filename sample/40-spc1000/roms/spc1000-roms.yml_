@@ -1,0 +1,6 @@
+---
+src_dir: spc1000
+files:
+  - demo.tap: 데모테입
+  - spcall.rom
+  - namyangju_godic.otf

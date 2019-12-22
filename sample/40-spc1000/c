@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo mount -t drvfs E: /mnt/e
+cp kernel8-32.img /mnt/e
