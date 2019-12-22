@@ -25,9 +25,7 @@ $make $1 $2 || exit
 
 cd fat
 $make $1 $2 || exit
-cd ..
-
-cd ..
+cd ../..
 
 cd sched
 $make $1 $2 || exit
@@ -39,9 +37,21 @@ cd ..
 
 cd bt
 $make $1 $2 || exit
+cd ../..
+
+cd addon/linux
+$make $1 $2 || exit
 cd ..
 
-cd ..
+cd SDCard
+$make $1 $2 || exit
+cd ../..
+
+cd addon/vc4
+source ./makeall $1 $2 || exit
+cd interface
+source ./makeall $1 $2 || exit
+cd ../../..
 
 if [[ $makesample == true ]]
 then

@@ -131,6 +131,11 @@ CPPFLAGS+= $(CFLAGS) -std=c++14
 
 %.o: %.cpp
 	@echo "  CPP   $@"
+	@echo 	@$(CPP) $(CPPFLAGS) -c -o $@ $<
+	@$(CPP) $(CPPFLAGS) -c -o $@ $<
+
+%.o: %.cc
+	@echo "  CPP   $@"
 	@$(CPP) $(CPPFLAGS) -c -o $@ $<
 
 $(TARGET).img: $(OBJS) $(LIBS) $(CIRCLEHOME)/circle.ld
