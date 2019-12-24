@@ -17,7 +17,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
+#define USE_VCHIQ_SOUND	
 #include "kernel.h"
+typedef __builtin_va_list __gnuc_va_list;
 #include <stdio.h>
 #include <circle/string.h>
 #include <circle/debug.h>
@@ -31,20 +33,23 @@
 #include "sokol.h"
 
 static const char FromKernel[] = "kernel";
-	
+
 extern "C" int _main(void);
 extern "C" int __main(void);
 extern "C" {
 #include "GLES2/gl2.h"
 }
 #define CSTDLIBAPP_DEFAULT_PARTITION "emmc1-1"
+	
 CKernel *CKernel::s_pThis = 0;
 CKernel::CKernel (void)
 :	m_Screen (m_Options.GetWidth (), m_Options.GetHeight ()),
-	m_VCHIQ (&m_Memory, &m_Interrupt),
-	m_Console (&m_Screen),
 	m_Timer (&m_Interrupt),
+#ifdef USE_VCHIQ_SOUND
+	m_VCHIQ (&m_Memory, &m_Interrupt),
+#endif	
 	m_Logger (m_Options.GetLogLevel (), &m_Timer),
+	m_Console (&m_Screen),
 	m_EMMC (&m_Interrupt, &m_Timer, &m_ActLED), 
 	m_USBHCI (&m_Interrupt, &m_Timer)
 {
@@ -112,18 +117,20 @@ boolean CKernel::Initialize (void)
 	{
 		bOK = m_USBHCI.Initialize ();
 	}
-
+	m_Console.Initialize ();
+	CGlueStdioInit (m_FileSystem, m_Console);
+#ifdef USE_VCHIQ_SOUND
 	if (bOK)
 	{
 		bOK = m_VCHIQ.Initialize ();
 	}
-	m_Console.Initialize ();
-	CGlueStdioInit (m_FileSystem, m_Console);
+#endif	
 	w = m_Screen.GetWidth();
 	h = m_Screen.GetHeight();
 	return bOK;
 }
-extern "C" void test_main(int, int);
+
+extern "C" int __main(void);
 extern "C" int _init_gl();
 extern "C" void _glSwapWindow();
 extern "C" int getTapePos();
@@ -139,30 +146,23 @@ TShutdownMode CKernel::Run (void)
 	//const char* glsl_version = "#version 120";
 	pMouse->RegisterEventHandler (ImGui_ImplCircle_ProcessEvent);	
 	pMouse->SetCursor (m_nPosX, m_nPosY);
+#if 1	
 	_init_gl();
 	ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = true;
-
-	io.DisplaySize = ImVec2((float)w, (float)h);	
+	ImGui::StyleColorsDark();
+	//const char* glsl_version = "#version 120";
 	ImGui_ImplCircle_InitForGLES();
-	ImGui_ImplOpenGL3_Init(0);	
-
-	sapp_desc desc = sokol_main(0, 0);
-	desc.width = io.DisplaySize.x;
-	desc.height = io.DisplaySize.y;
-    _sapp_init_state(&desc);
-	_sapp.valid = true;
-	_sapp.frame_count = 0;	
-	_sapp_call_init();	
+	ImGui_ImplOpenGL3_Init(0);
 
     // Our state
-    // bool show_demo_window = true;
-    // bool show_another_window = true;
-    // ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-    // Main loop
+    bool show_demo_window = true;
+    bool show_another_window = true;
+    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+   // Main loop
     bool done = false;
-	int w;
+	int counter = 0;
     while (!done)
     {
         // Poll and handle events (inputs, window resize, etc.)
@@ -179,38 +179,12 @@ TShutdownMode CKernel::Run (void)
             // if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(window))
                 // done = true;
         // }
-		//printf("\rTest:%d", counter++);
-		// ImGui_ImplOpenGL3_NewFrame();
-		// ImGui_ImplCircle_NewFrame(w, h);
-		io.MousePos = ImVec2((float)m_nPosX, (float)m_nPosY);
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui::NewFrame();
-#if 1		
-		if ((w = getTapePos())>0)
-		{
-			bool g_bMenuOpen = false;
-			ImVec2 xy(0,0);
-			ImGui::Begin("_", &g_bMenuOpen, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_AlwaysUseWindowPadding);
-			ImGui::SetNextWindowPos(xy);
-			ImGui::SetWindowSize(ImVec2((float)io.DisplaySize.x, 40.0f));
-			ImGuiStyle& style = ImGui::GetStyle();
-			style.WindowBorderSize = 0.0f;  
-			ImGui::SetWindowFocus("top"); 
-			ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(0,23), ImVec2((float) (io.DisplaySize.x), 40), IM_COL32(87,50,50,255));
-			ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(w * io.DisplaySize.x / 100.0f - 10,23), ImVec2((float) (w * io.DisplaySize.x / 100.0f), 40), IM_COL32(0,180,81,255));//ImVec2(10,10), ImVec2(320,20), IM_COL32(0,255,255,55));
-			ImGui::SetWindowPos(ImVec2(2,15));
-			ImGui::SetWindowFontScale(1.0f);
-			ImGui::Text("Tape Loading: %3d%%", (int)w);
-			ImGui::End();			
-		}
-		_sapp_call_frame();
-		_sapp.frame_count++;		
-#else
-		ImGui::Render();
-        glClear(GL_COLOR_BUFFER_BIT);
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());		
-        // Start the Dear ImGui frame
 
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplCircle_NewFrame(w, h);
+		ImGui::NewFrame();
+        // Start the Dear ImGui frame
+		printf("count:%d\r", counter++);
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -218,7 +192,6 @@ TShutdownMode CKernel::Run (void)
         // 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
         {
             static float f = 0.0f;
-			static int counter = 0;
 
             ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 
@@ -254,7 +227,6 @@ TShutdownMode CKernel::Run (void)
         glClear(GL_COLOR_BUFFER_BIT);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		//glFlush();
-#endif
         _glSwapWindow();		
     }
 
@@ -272,7 +244,13 @@ TShutdownMode CKernel::Run (void)
 	m_Logger.Write (FromKernel, LogNotice, "The following assertion will fail");
 	assert (1 == 2);
 #endif
-
+#else
+	int counter = 0;
+	while(true)
+	{
+		printf("counter:%d\r", counter++);
+	}
+#endif
 	return ShutdownHalt;
 }
 

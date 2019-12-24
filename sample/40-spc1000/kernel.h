@@ -68,8 +68,9 @@ private:
 	CKernelOptions		m_Options;
 	CDeviceNameService	m_DeviceNameService;
 	CScreenDevice		m_Screen;
+#ifdef USE_VCHIQ_SOUND	
 	CVCHIQDevice		m_VCHIQ;
-	CConsole		m_Console;
+#endif	
 	CSerialDevice		m_Serial;
 	CExceptionHandler	m_ExceptionHandler;
 	CInterruptSystem	m_Interrupt;
@@ -77,6 +78,7 @@ private:
 	CLogger			m_Logger;
 	CEMMCDevice     m_EMMC;
 	CUSBHCIDevice	m_USBHCI;
+	CConsole		m_Console;
 	CFATFileSystem  m_FileSystem;	
 	CScheduler		m_Scheduler;
 	int w, h;
@@ -94,7 +96,6 @@ public:
 	CKernel (void);
 	TShutdownMode Run (void);
 	bool Initialize() {
-		m_VCHIQ.Initialize ();
 		w = mScreen.GetWidth();
 		h = mScreen.GetHeight();
 		return CStdlibAppScreen::Initialize ();
@@ -103,7 +104,6 @@ public:
 private:
 	CMemorySystem		m_Memory;
 	CScheduler		m_Scheduler;
-	CVCHIQDevice		m_VCHIQ;
 	int w, h;
 
 };	

@@ -35,6 +35,9 @@ STDLIB_SUPPORT ?= 1
 # set this to "softfp" if you want to link specific libraries
 FLOAT_ABI ?= hard
 
+# set this to 1 to enable garbage collection on sections, may cause side effects
+GC_SECTIONS ?= 0
+
 CC	= $(PREFIX)gcc
 CPP	= $(PREFIX)g++
 AS	= $(CC)
@@ -43,7 +46,7 @@ AR	= $(PREFIX)ar
 
 ifeq ($(strip $(AARCH)),32)
 ifeq ($(strip $(RASPPI)),1)
-ARCH	?= -DAARCH=32 -march=armv6k -mtune=arm1176jzf-s -marm -mfpu=vfp -mfloat-abi=$(FLOAT_ABI)
+ARCH	?= -DAARCH=32 -mcpu=arm1176jzf-s -marm -mfpu=vfp -mfloat-abi=$(FLOAT_ABI)
 TARGET	?= kernel
 else ifeq ($(strip $(RASPPI)),2)
 ARCH	?= -DAARCH=32 -march=armv7-a -marm -mfpu=neon-vfpv4 -mfloat-abi=$(FLOAT_ABI)
@@ -93,7 +96,7 @@ CRTBEGIN != $(CPP) $(ARCH) -print-file-name=crtbegin.o
 CRTEND   != $(CPP) $(ARCH) -print-file-name=crtend.o
 endif
 else
-CPPFLAGS  += -fno-exceptions -fno-rtti -nostdinc++ -fno-threadsafe-statics
+CPPFLAGS  += -fno-exceptions -fno-rtti -nostdinc++
 endif
 
 ifeq ($(strip $(STDLIB_SUPPORT)),0)
@@ -108,6 +111,11 @@ LIBM	  != $(CPP) $(ARCH) -print-file-name=libm.a
 ifneq ($(strip $(LIBM)),libm.a)
 EXTRALIBS += $(LIBM)
 endif
+endif
+
+ifeq ($(strip $(GC_SECTIONS)),1)
+CFLAGS	+= -ffunction-sections -fdata-sections
+LDFLAGS	+= --gc-sections
 endif
 
 OPTIMIZE ?= -O2
@@ -151,7 +159,8 @@ $(TARGET).img: $(OBJS) $(LIBS) $(CIRCLEHOME)/circle.ld
 	@$(PREFIX)objcopy $(TARGET).elf -O binary $(TARGET).img
 	@echo -n "  WC    $(TARGET).img => "
 	@wc -c < $(TARGET).img
-	
+
+ifneq ($(SOURCES),)
 depend: .depend
 
 .depend: $(SOURCES)
@@ -159,6 +168,7 @@ depend: .depend
 	@$(CC) $(CFLAGS) -MM $^>>./.depend;
 
 include .depend		
+endif
 
 clean:
 	rm -f *.o *.bak *.elf *.lst *.hex *.cir *.map *.img *~ $(EXTRACLEAN)
