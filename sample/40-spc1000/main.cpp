@@ -22,7 +22,6 @@
 #include <circle/startup.h>
 #include <circle/bcm2835.h>
 
-
 CKernel m_Kernel;
 unsigned GetTicks()
 {

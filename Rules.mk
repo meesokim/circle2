@@ -37,6 +37,7 @@ FLOAT_ABI ?= hard
 
 # set this to 1 to enable garbage collection on sections, may cause side effects
 GC_SECTIONS ?= 0
+LDFLAGS ?= -g
 
 CC	= $(PREFIX)gcc
 CPP	= $(PREFIX)g++
@@ -96,7 +97,7 @@ CRTBEGIN != $(CPP) $(ARCH) -print-file-name=crtbegin.o
 CRTEND   != $(CPP) $(ARCH) -print-file-name=crtend.o
 endif
 else
-CPPFLAGS  += -fno-exceptions -fno-rtti -nostdinc++
+CPPFLAGS  += -fno-exceptions -fno-rtti -nostdinc++ -fno-threadsafe-statics
 endif
 
 ifeq ($(strip $(STDLIB_SUPPORT)),0)
@@ -127,7 +128,7 @@ DEFINE	+= -D__circle__ -DRASPPI=$(RASPPI) -DSTDLIB_SUPPORT=$(STDLIB_SUPPORT) \
 
 AFLAGS	+= $(ARCH) $(DEFINE) $(INCLUDE) $(OPTIMIZE)
 CFLAGS	+= $(ARCH) -Wall -fsigned-char -ffreestanding $(DEFINE) $(INCLUDE) $(OPTIMIZE) -g
-CPPFLAGS+= $(CFLAGS) -std=c++14
+CPPFLAGS+= $(CFLAGS) -std=c++14 
 
 %.o: %.S
 	@echo "  AS    $@"
@@ -171,7 +172,7 @@ include .depend
 endif
 
 clean:
-	rm -f *.o *.bak *.elf *.lst *.hex *.cir *.map *.img *~ $(EXTRACLEAN)
+	rm -f $(OBJS) *.bak *.elf *.lst *.hex *.cir *.map *.img *~ $(EXTRACLEAN)
 
 cleanlib:
 	rm -f *.o *$(RASPPI).a *.elf *.lst *.img *.hex *.cir *.map *~ $(EXTRACLEAN)

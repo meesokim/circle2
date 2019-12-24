@@ -19,7 +19,6 @@
 //
 #define USE_VCHIQ_SOUND	
 #include "kernel.h"
-typedef __builtin_va_list __gnuc_va_list;
 #include <stdio.h>
 #include <circle/string.h>
 #include <circle/debug.h>

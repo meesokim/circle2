@@ -1,54 +1,11 @@
-common.o: common.c \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- clock.h sokol/sokol_time.h fs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/ctype.h \
- ../../include/assert.h ../../include/circle/macros.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h gfx.h \
- sokol/sokol_gfx.h sokol/sokol_app.h shaders.glsl.h keybuf.h
+common.o: common.c clock.h sokol/sokol_time.h fs.h ../../include/assert.h \
+ ../../include/circle/macros.h gfx.h sokol/sokol_gfx.h sokol/sokol_app.h \
+ shaders.glsl.h keybuf.h
 gles.o: gles.c ../../addon/linux/kernel.h ../../addon/linux/compiler.h \
  ../../addon/linux/printk.h ../../addon/linux/kern_levels.h \
  ../../addon/linux/bug.h ../../include/assert.h \
  ../../include/circle/macros.h ../../addon/linux/barrier.h \
  ../../addon/linux/types.h ../../include/circle/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
  ../../include/circle/stdarg.h ../../addon/linux/delay.h \
  ../../addon/linux/spinlock.h ../../addon/linux/rwlock.h \
  ../../include/circle/sysconfig.h ../../include/circle/memorymap.h \
@@ -60,31 +17,10 @@ gles.o: gles.c ../../addon/linux/kernel.h ../../addon/linux/compiler.h \
  ../../addon/vc4/interface/khronos/include/../../bcm_host/../vmcs_host/../../interface/vcos/vcos_types.h \
  ../../addon/vc4/interface/khronos/include/../../bcm_host/../vmcs_host/../../interface/vcos/vcos_platform_types.h \
  ../../addon/vc4/interface/khronos/include/../../bcm_host/../vmcs_host/../../interface/vcos/vcos_inttypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/inttypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
  ../../addon/vc4/interface/khronos/include/../../bcm_host/../vmcs_host/../../interface/vcos/vcos_attr.h \
  ../../addon/vc4/interface/khronos/include/../../bcm_host/../vmcs_host/../../interface/vcos/vcos_platform.h \
  ../../addon/linux/pthread.h ../../addon/linux/sched.h \
  ../../addon/linux/mutex.h ../../addon/linux/list.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
  ../../addon/linux/errno.h ../../addon/linux/semaphore.h \
  ../../addon/linux/timer.h ../../addon/linux/jiffies.h \
  ../../addon/linux/string.h ../../include/circle/util.h \
@@ -142,129 +78,14 @@ gles.o: gles.c ../../addon/linux/kernel.h ../../addon/linux/compiler.h \
  ../../addon/vc4/interface/khronos/include/EGL/eglext.h \
  ../../addon/vc4/interface/khronos/include/EGL/eglext_brcm.h
 imgui.o: imgui/imgui.cpp imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
  ../../include/assert.h ../../include/circle/macros.h \
- imgui/imgui_internal.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h \
- ../../../circle-stdlib/install/arm-none-circle/include/math.h \
- ../../../circle-stdlib/install/arm-none-circle/include/limits.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/syslimits.h \
- imgui/imstb_textedit.h \
- ../../../circle-stdlib/install/arm-none-circle/include/ctype.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h
+ imgui/imgui_internal.h imgui/imstb_textedit.h
 imgui_demo.o: imgui/imgui_demo.cpp imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- ../../include/assert.h ../../include/circle/macros.h \
- ../../../circle-stdlib/install/arm-none-circle/include/ctype.h \
- ../../../circle-stdlib/install/arm-none-circle/include/limits.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/syslimits.h \
- ../../../circle-stdlib/install/arm-none-circle/include/math.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h
+ ../../include/assert.h ../../include/circle/macros.h
 imgui_draw.o: imgui/imgui_draw.cpp imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
  ../../include/assert.h ../../include/circle/macros.h \
- imgui/imgui_internal.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h \
- ../../../circle-stdlib/install/arm-none-circle/include/math.h \
- ../../../circle-stdlib/install/arm-none-circle/include/limits.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/syslimits.h \
- imgui/imstb_textedit.h imgui/imstb_rectpack.h imgui/imstb_truetype.h
+ imgui/imgui_internal.h imgui/imstb_textedit.h imgui/imstb_rectpack.h \
+ imgui/imstb_truetype.h
 imgui_impl_circle.o: imgui/imgui_impl_circle.cpp kernel.h \
  ../../include/circle/memory.h ../../include/circle/pagetable.h \
  ../../include/circle/types.h ../../include/assert.h \
@@ -312,12 +133,6 @@ imgui_impl_circle.o: imgui/imgui_impl_circle.cpp kernel.h \
  ../../addon/vc4/vchiq/vchiqdevice.h ../../addon/linux/linuxdevice.h \
  ../../addon/linux/platform_device.h ../../addon/linux/device.h \
  ../../addon/linux/ioport.h ../../addon/linux/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
  ../../addon/linux/interrupt.h ../../addon/linux/compiler.h \
  ../../addon/linux/err.h ../../addon/linux/errno.h \
  ../../include/circle_stdlib_app.h ../../include/circle/nulldevice.h \
@@ -348,119 +163,32 @@ imgui_impl_circle.o: imgui/imgui_impl_circle.cpp kernel.h \
  ../../include/circle/net/netconnection.h \
  ../../include/circle/net/checksumcalculator.h \
  ../../include/circle/net/tcprejector.h ../../include/circle_glue.h \
- imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- imgui/imgui_impl_circle.h ../../addon/linux/spinlock.h \
- ../../addon/linux/rwlock.h include/SDL.h include/SDL_main.h \
- include/SDL_stdinc.h include/SDL_config.h include/SDL_platform.h \
- include/begin_code.h include/close_code.h include/SDL_config_minimal.h \
- include/SDL_assert.h include/SDL_atomic.h include/SDL_audio.h \
- include/SDL_error.h include/SDL_endian.h include/SDL_mutex.h \
- include/SDL_thread.h include/SDL_rwops.h include/SDL_clipboard.h \
- include/SDL_cpuinfo.h include/SDL_events.h include/SDL_video.h \
- include/SDL_pixels.h include/SDL_rect.h include/SDL_surface.h \
- include/SDL_blendmode.h include/SDL_keyboard.h include/SDL_keycode.h \
- include/SDL_scancode.h include/SDL_mouse.h include/SDL_joystick.h \
- include/SDL_gamecontroller.h include/SDL_quit.h include/SDL_gesture.h \
- include/SDL_touch.h include/SDL_filesystem.h include/SDL_haptic.h \
- include/SDL_hints.h include/SDL_loadso.h include/SDL_log.h \
- include/SDL_messagebox.h include/SDL_power.h include/SDL_render.h \
- include/SDL_system.h include/SDL_timer.h include/SDL_version.h
+ imgui/imgui.h imgui/imconfig.h imgui/imgui_impl_circle.h \
+ ../../addon/linux/spinlock.h ../../addon/linux/rwlock.h include/SDL.h \
+ include/SDL_main.h include/SDL_stdinc.h include/SDL_config.h \
+ include/SDL_platform.h include/begin_code.h include/close_code.h \
+ include/SDL_config_minimal.h include/SDL_assert.h include/SDL_atomic.h \
+ include/SDL_audio.h include/SDL_error.h include/SDL_endian.h \
+ include/SDL_mutex.h include/SDL_thread.h include/SDL_rwops.h \
+ include/SDL_clipboard.h include/SDL_cpuinfo.h include/SDL_events.h \
+ include/SDL_video.h include/SDL_pixels.h include/SDL_rect.h \
+ include/SDL_surface.h include/SDL_blendmode.h include/SDL_keyboard.h \
+ include/SDL_keycode.h include/SDL_scancode.h include/SDL_mouse.h \
+ include/SDL_joystick.h include/SDL_gamecontroller.h include/SDL_quit.h \
+ include/SDL_gesture.h include/SDL_touch.h include/SDL_filesystem.h \
+ include/SDL_haptic.h include/SDL_hints.h include/SDL_loadso.h \
+ include/SDL_log.h include/SDL_messagebox.h include/SDL_power.h \
+ include/SDL_render.h include/SDL_system.h include/SDL_timer.h \
+ include/SDL_version.h
 imgui_impl_opengl3.o: imgui/imgui_impl_opengl3.cpp imgui/imgui.h \
- imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- ../../include/assert.h ../../include/circle/macros.h \
- imgui/imgui_impl_opengl3.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
+ imgui/imconfig.h ../../include/assert.h ../../include/circle/macros.h \
+ imgui/imgui_impl_opengl3.h \
  ../../addon/vc4/interface/khronos/include/GLES2/gl2.h \
  ../../addon/vc4/interface/khronos/include/GLES2/gl2platform.h \
  ../../addon/vc4/interface/khronos/include/GLES2/../KHR/khrplatform.h
 imgui_widgets.o: imgui/imgui_widgets.cpp imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
  ../../include/assert.h ../../include/circle/macros.h \
- imgui/imgui_internal.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h \
- ../../../circle-stdlib/install/arm-none-circle/include/math.h \
- ../../../circle-stdlib/install/arm-none-circle/include/limits.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/syslimits.h \
- imgui/imstb_textedit.h \
- ../../../circle-stdlib/install/arm-none-circle/include/ctype.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h
+ imgui/imgui_internal.h imgui/imstb_textedit.h
 kernel.o: kernel.cpp kernel.h ../../include/circle/memory.h \
  ../../include/circle/pagetable.h ../../include/circle/types.h \
  ../../include/assert.h ../../include/circle/macros.h \
@@ -507,12 +235,6 @@ kernel.o: kernel.cpp kernel.h ../../include/circle/memory.h \
  ../../addon/vc4/vchiq/vchiqdevice.h ../../addon/linux/linuxdevice.h \
  ../../addon/linux/platform_device.h ../../addon/linux/device.h \
  ../../addon/linux/ioport.h ../../addon/linux/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
  ../../addon/linux/interrupt.h ../../addon/linux/compiler.h \
  ../../addon/linux/err.h ../../addon/linux/errno.h \
  ../../include/circle_stdlib_app.h ../../include/circle/nulldevice.h \
@@ -543,27 +265,6 @@ kernel.o: kernel.cpp kernel.h ../../include/circle/memory.h \
  ../../include/circle/net/netconnection.h \
  ../../include/circle/net/checksumcalculator.h \
  ../../include/circle/net/tcprejector.h ../../include/circle_glue.h \
- stdio.h ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
  ../../include/circle/debug.h include/SDL.h include/SDL_main.h \
  include/SDL_stdinc.h include/SDL_config.h include/SDL_platform.h \
  include/begin_code.h include/close_code.h include/SDL_config_minimal.h \
@@ -579,23 +280,12 @@ kernel.o: kernel.cpp kernel.h ../../include/circle/memory.h \
  include/SDL_hints.h include/SDL_loadso.h include/SDL_log.h \
  include/SDL_messagebox.h include/SDL_power.h include/SDL_render.h \
  include/SDL_system.h include/SDL_timer.h include/SDL_version.h \
- imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- imgui/imgui_impl_opengl3.h imgui/imgui_impl_circle.h sokol/sokol.h \
+ imgui/imgui.h imgui/imconfig.h imgui/imgui_impl_opengl3.h \
+ imgui/imgui_impl_circle.h sokol/sokol.h \
  ../../addon/vc4/interface/khronos/include/GLES2/gl2.h \
  ../../addon/vc4/interface/khronos/include/GLES2/gl2platform.h \
  ../../addon/vc4/interface/khronos/include/GLES2/../KHR/khrplatform.h \
- sokol/sokol_app.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h \
- sokol/sokol_gfx.h sokol/sokol_time.h \
- ../../../circle-stdlib/install/arm-none-circle/include/time.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/time.h \
+ sokol/sokol_app.h sokol/sokol_gfx.h sokol/sokol_time.h \
  sokol/sokol_audio.h sokol/sokol_args.h
 main.o: main.cpp kernel.h ../../include/circle/memory.h \
  ../../include/circle/pagetable.h ../../include/circle/types.h \
@@ -643,12 +333,6 @@ main.o: main.cpp kernel.h ../../include/circle/memory.h \
  ../../addon/vc4/vchiq/vchiqdevice.h ../../addon/linux/linuxdevice.h \
  ../../addon/linux/platform_device.h ../../addon/linux/device.h \
  ../../addon/linux/ioport.h ../../addon/linux/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
  ../../addon/linux/interrupt.h ../../addon/linux/compiler.h \
  ../../addon/linux/err.h ../../addon/linux/errno.h \
  ../../include/circle_stdlib_app.h ../../include/circle/nulldevice.h \
@@ -680,83 +364,17 @@ main.o: main.cpp kernel.h ../../include/circle/memory.h \
  ../../include/circle/net/checksumcalculator.h \
  ../../include/circle/net/tcprejector.h ../../include/circle_glue.h \
  common.h sokol/sokol_app.h sokol/sokol_audio.h sokol/sokol_args.h \
- sokol/sokol_time.h clock.h fs.h gfx.h keybuf.h \
- ../../../circle-stdlib/install/arm-none-circle/include/ctype.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../include/circle/startup.h
-spc1000.o: spc1000.c common.h sokol/sokol_app.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- sokol/sokol_audio.h sokol/sokol_args.h sokol/sokol_time.h clock.h fs.h \
- gfx.h keybuf.h \
- ../../../circle-stdlib/install/arm-none-circle/include/ctype.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- chips/z80.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- ../../include/assert.h ../../include/circle/macros.h chips/mc6847.h \
+ sokol/sokol_time.h clock.h fs.h gfx.h sokol/sokol_gfx.h shaders.glsl.h \
+ keybuf.h ../../include/circle/startup.h
+spc1000.o: spc1000.c common.h sokol/sokol_app.h sokol/sokol_audio.h \
+ sokol/sokol_args.h sokol/sokol_time.h clock.h fs.h \
+ ../../include/assert.h ../../include/circle/macros.h gfx.h \
+ sokol/sokol_gfx.h shaders.glsl.h keybuf.h chips/z80.h chips/mc6847.h \
  chips/beeper.h chips/ay38910.h chips/kbd.h chips/clk.h chips/mem.h \
- systems/spc1000.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/stdlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/alloca.h stdio.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_endian.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/select.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_sigset.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timeval.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_timespec.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_pthreadtypes.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/sched.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/stdio.h \
- roms/spc1000-roms.h
-ui.o: ui.cc ui.h sokol/sokol_app.h \
- ../../../circle-stdlib/install/arm-none-circle/include/stdint.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_default_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/features.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_newlib_version.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_intsup.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_stdint.h \
- sokol/sokol_gfx.h sokol/sokol_time.h imgui/imgui.h imgui/imconfig.h \
- ../../../circle-stdlib/install/arm-none-circle/include/string.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/newlib.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/config.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/ieeefp.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/reent.h \
- ../../../circle-stdlib/install/arm-none-circle/include/_ansi.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/machine/_types.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/lock.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/cdefs.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/_locale.h \
- ../../../circle-stdlib/install/arm-none-circle/include/strings.h \
- ../../../circle-stdlib/install/arm-none-circle/include/sys/string.h \
- ../../include/assert.h ../../include/circle/macros.h \
- imgui/imgui_impl_opengl3.h imgui/imgui_impl_circle.h \
- ../../include/circle/input/mouse.h ../../include/circle/device.h \
- ../../include/circle/types.h ../../include/circle/input/mousebehaviour.h \
- sokol/util/sokol_imgui.h
+ systems/spc1000.h roms/spc1000-roms.h
+ui.o: ui.cc ui.h sokol/sokol_app.h sokol/sokol_gfx.h sokol/sokol_time.h \
+ imgui/imgui.h imgui/imconfig.h ../../include/assert.h \
+ ../../include/circle/macros.h imgui/imgui_impl_opengl3.h \
+ imgui/imgui_impl_circle.h ../../include/circle/input/mouse.h \
+ ../../include/circle/device.h ../../include/circle/types.h \
+ ../../include/circle/input/mousebehaviour.h sokol/util/sokol_imgui.h

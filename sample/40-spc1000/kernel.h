@@ -19,7 +19,7 @@
 //
 #ifndef _kernel_h
 #define _kernel_h
-
+typedef __builtin_va_list __gnuc_va_list;
 #include <circle/memory.h>
 #include <circle/actled.h>
 #include <circle/koptions.h>
@@ -64,21 +64,21 @@ public:
 private:
 	// do not change this order
 	CMemorySystem		m_Memory;
-	CActLED			m_ActLED;
+	CActLED				m_ActLED;
 	CKernelOptions		m_Options;
 	CDeviceNameService	m_DeviceNameService;
 	CScreenDevice		m_Screen;
-#ifdef USE_VCHIQ_SOUND	
-	CVCHIQDevice		m_VCHIQ;
-#endif	
 	CSerialDevice		m_Serial;
 	CExceptionHandler	m_ExceptionHandler;
 	CInterruptSystem	m_Interrupt;
 	CTimer			m_Timer;
+#ifdef USE_VCHIQ_SOUND	
+	CVCHIQDevice		m_VCHIQ;
+#endif	
 	CLogger			m_Logger;
+	CConsole		m_Console;
 	CEMMCDevice     m_EMMC;
 	CUSBHCIDevice	m_USBHCI;
-	CConsole		m_Console;
 	CFATFileSystem  m_FileSystem;	
 	CScheduler		m_Scheduler;
 	int w, h;

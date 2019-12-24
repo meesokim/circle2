@@ -2,7 +2,7 @@
 # Makefile
 #
 
-DEFINE += -DGLFW_INCLUDE_ES2 -D_GLFW_CIRCLE -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -DSOKOL_GLES2 -DFIPS_RASPBERRYPI -D__circle__ 
+DEFINE += -DGLFW_INCLUDE_ES2 -D_GLFW_CIRCLE -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -DSOKOL_GLES2 -D__circle__ 
 CIRCLEHOME = ../..
 SOURCES = $(shell find . -type f \( -iname "*.c" -o -iname "*.cpp" -o -iname "*.cc" \) -print)
 OBJS	= $(shell echo $(SOURCES) | sed -r 's/\.c|\.cpp|.cc/\.o/g')
